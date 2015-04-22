@@ -13,7 +13,8 @@ myproxy 实际上是一个带web界面的代理服务器，主要用于开发阶
 
 使用说明
 ----------------------
-暂无
+请全局安装supervisor
+  npm install supervisor -g  
 
 
 源代码下载
