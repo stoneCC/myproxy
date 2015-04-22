@@ -1,0 +1,18 @@
+{
+	"ECECE7E4-CBE7-46F5-83C5-5630A8FC74E5": {
+		"owner": "192.168.55.199",
+		"name": "projectA",
+		"rewrite": {
+			"h.yaolanimage.cn": "/data/nodejs/project/projectA"
+		},
+		"projectId": "ECECE7E4-CBE7-46F5-83C5-5630A8FC74E5"
+	},
+	"593CE293-1564-4E6C-AAC4-A0DD3F073C7C": {
+		"owner": "192.168.55.181",
+		"name": "杨旭测试项目",
+		"rewrite": {
+			"h.yaolanimage.cn": "E:\\work\\www\\m站"
+		},
+		"projectId": "593CE293-1564-4E6C-AAC4-A0DD3F073C7C"
+	}
+}

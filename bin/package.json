@@ -1,0 +1,10 @@
+{
+    "name":"F2E-proxy",
+    "version":"0.0.1",
+    "description":" i develop it for my team local test,and center test",
+    "author":"常川,yf1983321@sina.com,qq:29995716",
+    "dependencies":{
+	"request":">=2.55.0",
+        "node-static":">=0.7.5"
+    }
+}

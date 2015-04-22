@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.3.2-dist/css/bootstrap-combined.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file://  -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif] -->
+    <style>
+      .btn{
+        margin-bottom:1em; 
+      }
+    
+    #project{
+        position: fixed;
+        top: 0;
+        background: #fff;
+        padding-top:2em;
+        margin-bottom: 2em;
+        bottom:0;
+    }    
+    #project h1{
+        text-align:center;
+    }
+
+    </style>
+  </head>
+  <body>
+<div class="container-fluid">
+      <div class="page-header">
+        <h1>前端测试系统</h1>
+        <pre>支持多项目并行，产品，测试等同事可以选择不同的项目进行测试<br/>
+如有问题请联系: 常川-前端组-技术中心
+             <a href="/" style="float: right;">回首页</a></pre>
+        </pre>
+      </div>
+ <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">请选择修改的项目或<button style="margin-left: 1em;" class="btn btn-primary btn-success" type="button" id="createProjectBtn"  >新建项目</button></h3>
+        </div>
+      </div>
+       <div class="row" id="projectList">
+
+        <% if (typeof projects !="undefined") { %>
+            <% for(  pid in projects){ var project = projects[pid]; %>
+              <div class="col-md-3">
+        <% if( user.currentProject == pid){%>
+                    <button projectId='<%= pid %>' class="btn btn-large btn-block btn-primary btn-success" type="button" ><%= project.name %></button>
+        <% }else{ %>
+        <button  projectId='<%= pid %>' class="btn btn-large btn-block btn-primary " type="button" ><%= project.name %></button>
+
+        <% } %>
+                </div>
+            <% } %>
+        <% } %>
+      </div>
+</div>
+    <div id="project" class="row-fluid" style="display:none">
+        <h1>请修改/添加，该项目的参数并提交</h1>
+        <div class="span12">
+            <form class="form-horizontal">
+                <div class="control-group">
+                     <label class="control-label" for="projectId">项目名称:</label>
+                    <div class="controls">
+                         <input id="projectId" name="projectId" type="hidden" />
+
+                        <input id="projectName" name="projectName" type="text" />
+                    </div>
+                </div>
+                <% for(var i=0;i<10;i++){ %>
+                <div class="control-group">
+                     <label class="control-label" for="rewrite">映射规则</label>
+                    <div class="controls">
+                        <input  name="rewrite[][domain]" type="text" />
+                        -->
+                        <input  name="rewrite[][path]" type="text" />
+                    </div>
+                </div>
+               <% } %> 
+                <div class="control-group">
+                    <div class="controls">
+                         <button type="submit" class="btn btn-large  btn-primary ">提交</button>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/lib/jquery.1.11.2.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="js/modify.js"></script>
+  </body>
+</html>
