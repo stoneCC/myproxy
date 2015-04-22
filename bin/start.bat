@@ -1,1 +1,1 @@
-supervisor -w ../conf -e json bin/proxy.js
+supervisor -w ../conf -e json proxy.js

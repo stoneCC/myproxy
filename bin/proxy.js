@@ -15,6 +15,7 @@ var conf_user = require("../conf/user.conf.json");
 var conf_project = require("../conf/project.conf.json");
 var conf_hosts = require("../conf/hosts.conf.json");
 
+require("../server.js");
 
 var servers = {};
 for( var projectId in conf_project)
@@ -86,7 +87,5 @@ var httpServer = http.createServer(function(req, res) {
 
     }).resume();
 });
-
 httpServer.listen(80);
-
 
