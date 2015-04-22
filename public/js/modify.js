@@ -20,7 +20,8 @@ $(function(){
         var paths = form.elements["rewrite[][path]"];
         for(var i=0;i<domains.length;i++){
             if(domains[i].value == '')break;
-            rewrite[domains[i].value] =  paths[i].value;
+		
+            rewrite[domains[i].value.trim()] =  paths[i].value.trim();
         }
         if(  !name )return false;
         var data = {
