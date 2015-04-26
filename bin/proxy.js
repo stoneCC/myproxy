@@ -5,7 +5,7 @@
  *detail: 本地开发静态文件代理服务器，配置指定域名及本地目录，如果本地文件存在则访问本地的文件，否则访问线上文件
  */
 
-var func = require('./func.js');
+var func = require('../lib/func.js');
 var nodeStatic = require('node-static').Server;
 var request = require("request");
 var dns = require("dns");
@@ -32,7 +32,7 @@ for( var projectId in conf_project)
 var httpServer = http.createServer(function(req, res) {
       req.addListener('end', function() {
 
-        var user = func.getClientIp(req);
+        var user = func.getIp(req);
         var projectId = conf_user[user]["currentProject"];
         var host = req.headers.host;
 		console.log( req.url );
