@@ -82,9 +82,6 @@ $(function(){
                 paths[i].value = rew[p];
                 i++;
             }
-            for(;i<10;i++){
-                domains[i].parentNode.parentNode.style.display="none";
-            } 
         }
         
         $("#project").show();
